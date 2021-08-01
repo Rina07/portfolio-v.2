@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    /*font-family: 'Nunito Sans', sans-serif;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Futura PT', sans-serif;
+    font-size: 20px;     
+}
+
+app-print-page {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.tech-tags {
+    display: inline-block;
+    color: white;
+    padding: 4px 10px;   
+    background-color: #c64954;    
+    margin-right: 10px;  
+  }
+
+  .btn-delete {
+    background-color: transparent;    
+    border: 1px solid rgba(145,13,13,.9);
+    color: #AF2222;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-delete:hover {
+    background-color: #AF2222;
+    color: #fff;
+    border: 1px solid rgba(145,13,13,.9);
+}
+
+.btn-edit {
+    padding: 5px 35.77px;    
+    background-color: transparent;   
+    border: 1px solid #109579;
+    color: #109579;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-edit:hover {
+    background-color: #109579;
+    color: #fff;
+    border: 1px solid #029b7a;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid #AF2222;
+}
+
+input.ng-valid.ng-touched, textarea.ng-valid.ng-touched {
+    border: 1px solid #109579;
+}
+
+small {
+    color: #AF2222;
+}
+
+.custom-file-label::after {
+    color:#109579;
+    background-color: transparent;     
+} 
+
+@media print {
+    app-print-page {
+        display: block;
+    }
+    app-main-page {
+        display: none;
+    }
+}

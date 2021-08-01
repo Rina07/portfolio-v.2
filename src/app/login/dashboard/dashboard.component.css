@@ -1,0 +1,27 @@
+p {
+    margin-bottom: 5px;
+}
+
+p:last-of-type {
+    margin-bottom: 15px;
+}
+
+.tags {
+    font-size: 86%;
+}
+
+.btn-delete {
+    padding: 3px 25.17px;    
+}
+
+.btn-edit {
+    padding: 3px 35.77px;        
+}
+
+h4 {
+    color: #3b3838;
+}
+
+p {
+    color: #706f6f;
+}

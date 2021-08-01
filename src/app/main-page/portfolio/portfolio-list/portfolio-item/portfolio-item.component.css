@@ -1,0 +1,77 @@
+@media screen and (max-width: 768px) {
+  .media {
+    max-width: 94%;
+    margin: auto;
+  }
+
+  .media-body {
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .media {
+    position: relative;
+    max-width: 40%;
+    float: right !important;
+  }
+
+  .media-body {
+    height: 100%;
+    padding-right: 80px;
+  }
+}
+
+p,
+p a {
+  line-height: 28px;
+  margin: 5px 0;
+  /*color: #706f6f;*/
+  color: #706868;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h5 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 130%;
+  font-weight: 600;
+  color: #3b3838;
+ /* color: #433635;*/
+}
+
+
+
+.media:hover .media-img {
+  position: relative;
+  background-image: linear-gradient(rgba(33, 51, 87, 0.45), rgba(33, 51, 87, 0.45));
+  z-index: 3;
+}
+
+.project-technologies p,
+.tech-tags {
+  text-transform: uppercase;
+  font-size: 82%;
+}
+
+.row {
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.project-item {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
+
+.media-body img {
+  height: 30px;
+}

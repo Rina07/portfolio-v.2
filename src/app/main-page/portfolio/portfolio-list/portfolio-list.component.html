@@ -1,0 +1,14 @@
+<div class="row justify-content-center" id="portfolio">    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
+        <div  *ngIf="items$ | async as items; else loading" [@listAnimation]="state">
+            <div  *ngFor="let item of items" >
+            <app-portfolio-item [project]="item" ></app-portfolio-item>
+        </div>
+    </div>
+        <ng-template #loading>
+            <div class="text-center py-4">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+        </ng-template>
+    </div>
+</div>

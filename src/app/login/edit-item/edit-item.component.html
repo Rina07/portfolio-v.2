@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row justify-content-center pt-5">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 pt-5">
+            <div *ngIf="form; else loading">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="name">Project name</label>
+                                <input type="text" class="form-control" formControlName="name" required>
+                                <div *ngIf="form.get('name').invalid && form.get('name').touched">
+                                    <small *ngIf="form.get('name').errors.required">Please provide a project
+                                        name</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Project description</label>
+                                <textarea class="form-control" rows="4" formControlName="description"
+                                    required></textarea>
+                                <div *ngIf="form.get('description').invalid && form.get('description').touched">
+                                    <small *ngIf="form.get('description').errors.required">Please provide a
+                                        description</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="link">Project link</label>
+                                <input type="text" class="form-control" formControlName="link" required>
+                                <div *ngIf="form.get('link').invalid && form.get('link').touched">
+                                    <small *ngIf="form.get('link').errors.required">Please provide a valid project
+                                        link</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="source-code">Source code link</label>
+                                <input type="text" class="form-control" formControlName="source" required>
+                                <div *ngIf="form.get('source').invalid && form.get('source').touched">
+                                    <small *ngIf="form.get('source').errors.required">Please provide a source code
+                                        link</small>
+                                </div>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile"
+                                    (change)="uploadFile($event)">
+                                <label class="custom-file-label" for="customFile">Select project photo</label>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="tech-stack">Technology stack</label>
+                                <div class="row">
+                                    <div class="col" formArrayName="techs">
+                                        <div *ngFor="let tech of techs.controls; let i = index">
+                                            <input type="text" class="form-control" [formControlName]="i" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-edit btn-custom mt-2"
+                                            (click)="addTechs()">Add
+                                            Techs</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-edit"
+                                    [disabled]="form.invalid || submitted">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ng-template #loading>
+                <div class="text-center py-4">
+                    <app-loading-spinner></app-loading-spinner>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

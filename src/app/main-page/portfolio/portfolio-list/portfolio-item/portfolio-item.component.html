@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12 clearfix project-item">
+        <div class="media">
+            <a href="{{project.link}}">
+                <img src="{{project.photo}}" alt="{{project.name}}" class="rounded img-fluid img-thumbnail media-img shadow mb-5">
+            </a>
+        </div>
+        <div class="media-body d-flex align-items-start flex-column">
+            <h5>{{project.name}}</h5>
+            <p>{{project.description}}</p>
+            <p><a href="{{project.link}}">See it online <img src="../../../../../assets/images/9.svg"></a></p>
+            <p><a href="{{project.source}}">Check out code <img src="../../../../../assets/images/9.svg"></a></p>
+            <div class="mt-3 project-technologies">
+                <p>Technology stack</p>
+                <ul>                   
+                   <li class="tech-tags mb-1" *ngFor="let el of project.techs">{{el}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

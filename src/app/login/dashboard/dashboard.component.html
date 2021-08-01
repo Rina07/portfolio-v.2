@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row justify-content-center pt-5">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 pt-5">
+            <div *ngIf="isLoaded; else loading">
+                <div class="row">
+                    <div class="col pb-4">
+                        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchStr">
+                    </div>
+                </div>
+                <div *ngFor="let item of items | searchProjects:searchStr">
+                    <h4>{{item.name}}</h4>
+                    <img [src]="transform(item.photo)" class="rounded img-fluid img-thumbnail my-2">
+                    <div class="mt-1">
+                        <p class="tags">{{tags.toUpperCase()}}</p>
+                        <ul class="pl-0 mb-2">
+                            <li class="tech-tags mb-1" *ngFor="let el of item.techs">{{el}}</li>
+                        </ul>
+                    </div>
+                    <p>{{item.description}}</p>
+                    <p>Project link: {{item.link}}</p>
+                    <p>Source code link: {{item.source}}</p> 
+                    <button class="btn btn-edit mr-3" [routerLink]="['/login', 'edit', item.id]">Edit</button>
+                    <button type="button" class="btn btn-delete mr-3" (click)="remove(item.id)">Delete</button>
+                    <hr>
+                </div>
+            </div>
+            <ng-template #loading>
+                <div class="text-center py-4">
+                    <app-loading-spinner></app-loading-spinner>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

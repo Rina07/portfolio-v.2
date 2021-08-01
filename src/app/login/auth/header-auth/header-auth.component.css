@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #d24d57;     
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-item .nav-link {
+    padding: 20px 20px; 
+}
+
+.nav-link  {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 85%;
+    letter-spacing: 1px;       
+    transition: color 0.5s ease-out; 
+}
+
+.navbar .nav-link:hover, .navbar .nav-link:active {    
+    color: #e0a6ab;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col pt-5">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 pt-5">
+                        <div class="form-group">
+                            <label for="name">Project name</label>
+                            <input type="text" class="form-control" placeholder="Your project name"
+                                formControlName="name" required>
+                            <div *ngIf="form.get('name').invalid && form.get('name').touched">
+                                <small *ngIf="form.get('name').errors.required">Please provide a project name</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Project description</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Please enter a description of the project" formControlName="description"
+                                required></textarea>
+                            <div *ngIf="form.get('description').invalid && form.get('description').touched">
+                                <small *ngIf="form.get('description').errors.required">Please provide a
+                                    description</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Project link</label>
+                            <input type="text" class="form-control" placeholder="https://www.yourproject"
+                                formControlName="link" required>
+                            <div *ngIf="form.get('link').invalid && form.get('link').touched">
+                                <small *ngIf="form.get('link').errors.required">Please provide a valid project
+                                    link</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="source-code">Source code link</label>
+                            <input type="text" class="form-control" placeholder="https://www.source-code"
+                                formControlName="source" required>
+                            <div *ngIf="form.get('source').invalid && form.get('source').touched">
+                                <small *ngIf="form.get('source').errors.required">Please provide a source code
+                                    link</small>
+                            </div>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" (change)="uploadFile($event)">
+                            <label class="custom-file-label" for="customFile">Select project photo</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="tech-stack">Technology stack</label>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check" *ngFor="let tech of TechTags; let i = index">
+                                        <input type="checkbox" class="form-check-input" [value]="tech.value" [checked]="tech.checked" 
+                                            (change)="onCheckboxChange($event)">
+                                        <label class="form-check-label">{{tech.name}}</label>
+                                    </div>                                    
+                                    <small *ngIf="this.form.controls['techs'].errors?.required">Checkbox is required,
+                                        please select at least one.</small>
+                                </div>
+                            </div>
+                        </div>                        
+                        <hr>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-edit" [disabled]="form.invalid" (click)="resetTechs()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

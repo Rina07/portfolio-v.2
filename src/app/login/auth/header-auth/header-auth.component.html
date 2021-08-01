@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg fixed-top shadow mb-5">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/">Portfolio</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+                <a class="nav-link" routerLink="/login/dashboard">Dashboard</a>
+            </li>
+            <Li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+                <a class="nav-link" routerLink="/login/create">Create</a>
+            </Li>
+        </ul>       
+        <ul class="navbar-nav" *ngIf="auth.isAuthenticated()">
+            <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer" (click)="logout($event)">Log out</a>
+            </li>
+        </ul>
+    </div>
+</nav>

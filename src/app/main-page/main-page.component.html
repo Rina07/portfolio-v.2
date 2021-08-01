@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row outer-row" id="home">
+    <div class="col outer-col">
+      <div class="row custom-row">
+        <div class="col col-12 background-col">
+          <div class="row justify-content-center align-items-end custom-background-row">
+            <div class="col col-xs-12 col-sm-12 background-child-col">
+              <div class="row">
+                <div class="col name text-center" [@name]="stateName">
+                  <h1>{{name}}</h1>
+                </div>
+              </div>
+              <div class="col px-0 description text-center" [@description]="stateDescription">
+                <h4>Hello! I'm a web developer based in Lviv</h4>
+              </div>
+              <div class="row">
+                <div class="col button text-center" [@button]="stateButton">
+                  <button type="button" class="btn" (click)="printCV()">Check out CV</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-portfolio></app-portfolio>
+</div>

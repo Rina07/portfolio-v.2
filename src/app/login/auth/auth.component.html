@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row justify-content-center pt-5">
+        <div class="col-xs-12 col-md-4 pt-5">            
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="alert alert-danger" *ngIf="auth.error$ | async as error">{{error}}</div>
+                <div class="alert alert-info" *ngIf="message">{{message}}</div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" class="form-control" formControlName="email">
+                    <div *ngIf="form.get('email').touched && form.get('email').invalid">
+                        <small *ngIf="form.get('email').errors.required">Please provide an email</small>
+                        <small *ngIf="form.get('email').errors.email">Email must be valid</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" formControlName="password">
+                    <div *ngIf="form.get('password').touched && form.get('password').invalid">
+                        <small *ngIf="form.get('password').errors.required">Please provide a password</small>
+                        <small *ngIf="form.get('password').errors.minlength">The password must be at least
+                            {{form.get('password').errors.minlength.requiredLength}} characters long. Now it is
+                            {{form.get('password').errors.minlength.actualLength}}
+                            characters.</small>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-delete" type="submit" [disabled]="form.invalid || submitted">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
