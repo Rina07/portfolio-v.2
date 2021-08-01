@@ -19,6 +19,12 @@
   .footer-h4 {
     font-size: 113%;
   }
+
+  .up {    
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+  }
 }
 
 @media screen and (min-width: 769px) {
