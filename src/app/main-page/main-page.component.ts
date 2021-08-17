@@ -15,7 +15,7 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
         opacity: 0
       })),
       transition('start <=> end', [
-        animate('0.6s ease-in-out')
+        animate('0.4s ease-in-out')
       ])
     ]),
     trigger('description', [
@@ -26,7 +26,7 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
         opacity: 0
       })),
       transition('start <=> end', [
-        animate('0.6s ease-in-out')
+        animate('0.4s ease-in-out')
       ])
     ]),
     trigger('button', [
@@ -37,7 +37,7 @@ import { trigger, style, transition, animate, state } from '@angular/animations'
         opacity: 0
       })),
       transition('start <=> end', [
-        animate('0.6s ease-in-out')
+        animate('0.4s ease-in-out')
       ])
     ])
   ]
@@ -59,14 +59,14 @@ export class MainPageComponent {
     } else if(document.body.scrollTop <= 120 || document.documentElement.scrollTop <= 120) {
       this.stateName = 'start';
     }
-    if(document.body.scrollTop > 220 || document.documentElement.scrollTop > 220) {
+    if(document.body.scrollTop > 240 || document.documentElement.scrollTop > 240) {
       this.stateDescription = 'end';
-    } else if(document.body.scrollTop <= 220 || document.documentElement.scrollTop <= 220) {
+    } else if(document.body.scrollTop <= 240 || document.documentElement.scrollTop <= 240) {
       this.stateDescription = 'start';
     }
-    if(document.body.scrollTop > 320 || document.documentElement.scrollTop > 320) {
+    if(document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
       this.stateButton = 'end';
-    } else if(document.body.scrollTop <= 320 || document.documentElement.scrollTop <= 320) {
+    } else if(document.body.scrollTop <= 350 || document.documentElement.scrollTop <= 350) {
       this.stateButton = 'start';
     }
   }

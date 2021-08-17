@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Provider } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PortfolioComponent } from './main-page/portfolio/portfolio.component';
 import { HeaderComponent } from './main-page/header/header.component';
 import { PortfolioListComponent } from './main-page/portfolio/portfolio-list/portfolio-list.component';
@@ -60,6 +60,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })      

@@ -18,13 +18,7 @@
 
   .footer-h4 {
     font-size: 113%;
-  }
-
-  .up {    
-    margin: 0 auto;
-    right: 0;
-    left: 0;
-  }
+  }  
 }
 
 @media screen and (min-width: 769px) {
@@ -119,7 +113,7 @@ h5 {
   font-weight: 400;
   font-size: 90%;
   letter-spacing: 1px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   background-color: transparent;
   color: #d24d57;
   border: 1px solid #d24d57;
@@ -142,10 +136,9 @@ form {
 
 .up {
   position: absolute;
-  bottom: -75px;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
+  bottom: -75px; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn-up {
@@ -186,10 +179,10 @@ form {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 70%;
-  font-family: 'Nunito Sans', sans-serif;
-  margin-right: 7px;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 3px 3.5px;
   display: inline-block;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   color: rgba(255, 255, 255, 0.2);
   background-color: #00000033;
   border: 1px solid transparent;
@@ -197,12 +190,19 @@ form {
 }
 
 .linkedin {
-  padding: 8px 17.5px;
-  margin-bottom: 5px;
+  padding: 8px 17.9px;  
+}
+
+.fa-linkedin-in::before {
+  content: "";
 }
 
 .github {
   padding: 8px 22px;
+}
+
+.fa-github::before {
+  content: "";
 }
 
 .linkedin:hover {
